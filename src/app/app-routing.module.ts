@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { CommonModule } from '@angular/common';
+import { Routes} from '@angular/router';
+import { SalariesComponent } from '../app/components/salaries/salaries.component';
 
-// this constant default routes to Home, and also send all unknown path to Home
+
+
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
-  { path: '**', component: HomeComponent }
-];
-
+  { path: 'salaries', component: SalariesComponent },
+]
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  declarations: [],
+  imports: [
+    CommonModule
+  ]
 })
 export class AppRoutingModule { }
